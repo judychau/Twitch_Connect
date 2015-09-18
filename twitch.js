@@ -1,3 +1,4 @@
+//GET request to api
 var xhr = new XMLHttpRequest();
 var url = "https://api.twitch.tv/kraken/search/streams?q=starcraft"
 
@@ -10,7 +11,7 @@ xhr.open("GET", url, true);
 xhr.send();
 
 
-//search box for querying api
+//Grab text from search box for api query
 function searchFunction() {
 	var params = document.getElementById("search").value; 
 	var query = params.split(" ").join("+"); 
@@ -22,7 +23,7 @@ function searchFunction() {
 }
 
 
-//json response from api
+//JSON response from api
 function myFunction(response) {
     var data = JSON.parse(response); console.log(data);
     var stream = data.streams;
